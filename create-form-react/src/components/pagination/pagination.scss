@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.pagination {
+  &__list {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  &__item {
+    border: 1px solid $c-black;
+    justify-content: center;
+    transition: $t-normal;
+    align-items: center;
+    margin-right: 10px;
+    @include size(30);
+    margin-top: 5px;
+    cursor: pointer;
+    display: flex;
+
+    &:hover {
+      background-color: rgba($c-blue, 0.1);
+    }
+
+    &--arrow {
+      background-color: $c-grey;
+      transition: $t-normal;
+      padding-bottom: 2px;
+      color: $c-white;
+
+      &:hover {
+        background-color: rgba($c-blue, 0.3);
+      }
+    }
+  }
+}
+
+.active {
+  background-color: $c-blue;
+  color: $c-white;
+  cursor: default;
+
+  &:hover {
+    background-color: $c-blue;
+  }
+}
+
+.disabled-arrow {
+  background-color: rgba($c-grey, 0.3);
+  border: 1px solid $c-grey;
+  cursor: default;
+  color: $c-grey;
+
+  &:hover {
+    background-color: rgba($c-grey, 0.3);
+  }
+}

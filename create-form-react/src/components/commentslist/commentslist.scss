@@ -1,0 +1,59 @@
+@import '../../styles/include-media';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.comments {
+  @include maxCentered(600);
+
+  &__button {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  &__data {
+    border-bottom: 2px solid $c-grey;
+    justify-content: space-between;
+    font-family: $f-lobster;
+    align-items: center;
+    padding: 10px 0;
+    display: flex;
+
+    @include media('<=phone') {
+      text-align: center;
+      font-size: em(12);
+    }
+
+    &__count {
+      cursor: default;
+    }
+
+    &__sort {
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+
+      @include media('<=phone') {
+        display: block;
+      }
+    }
+
+    & .data-text {
+      margin-right: 10px;
+      cursor: pointer;
+      display: block;
+
+      @include media('<=phone') {
+        margin-right: 0;
+        text-align: end;
+      }
+
+      &:hover {
+        color: $c-blue;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

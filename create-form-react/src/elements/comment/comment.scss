@@ -1,0 +1,74 @@
+@import '../../styles/include-media';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.comment-item {
+  border-bottom: 1px solid $c-lightBorder;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  display: flex;
+
+  &__photo {
+    @include size(40);
+
+    @include media('<=phone') {
+      @include size(25);
+    }
+  }
+
+  &__content {
+    padding-left: 10px;
+    width: 85%;
+
+    @include media('<=phone') {
+      width: 75%;
+    }
+
+    &__wrapper {
+      justify-content: space-between;
+      display: flex;
+
+      @include media('<=phone') {
+        display: block;
+      }
+    }
+  }
+
+  &__username,
+  &__text {
+    word-wrap: break-word;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  &__username {
+    max-width: 70%;
+
+    @include media('<=phone') {
+      max-width: 100%;
+    }
+  }
+
+  &__date {
+    font-size: em(12);
+
+    @include media('<=phone') {
+      margin: 10px 0;
+    }
+  }
+}
+
+.icon {
+  @include size(10);
+}
+
+.image {
+  border-radius: 50%;
+
+  display: block;
+  width: 100%;
+}

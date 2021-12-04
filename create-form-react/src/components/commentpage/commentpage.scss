@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.main {
+  &__wrapper {
+    padding: 30px 20px;
+  }
+
+  &__form {
+    @include maxCentered(600);
+  }
+}

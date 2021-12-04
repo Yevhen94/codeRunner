@@ -1,0 +1,70 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.form {
+  flex-direction: column;
+  font-family: $f-roboto;
+  align-items: center;
+  display: flex;
+  width: 100%;
+
+  & label {
+    width: 100%;
+  }
+
+  &__fieldname {
+    margin-bottom: 5px;
+    padding-left: 5px;
+    font-weight: bold;
+    font-size: em(18);
+    cursor: pointer;
+    display: block;
+  }
+
+  &__input-name,
+  &__input-text {
+    border: 1px solid $c-lightBorder;
+    background-color: $c-darkBg;
+    font-family: inherit;
+    transition: $t-normal;
+    border-radius: 5px;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+
+    &:focus {
+      background-color: rgba($c-blue, .1);
+      border-color: $c-blue;
+    }
+  }
+
+  &__input-text {
+    height: 150px;
+    resize: none;
+  }
+
+  &__button {
+    margin-top: 5px;
+    align-self: flex-end;
+  }
+
+  &__error,
+  &__success {
+    margin-top: 5px;
+    height: 20px;
+  }
+
+  &__error {
+    font-size: em(12);
+    text-align: end;
+    padding: 0 10px;
+    color: $c-red;
+    width: 100%;
+  }
+
+  &__success {
+    font-size: em(18);
+    font-weight: bold;
+    color: $c-green;
+  }
+}
