@@ -1,0 +1,73 @@
+@import "../../styles/include-media";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.main {
+  &__wrapper {
+    padding: 20px 10px;
+  }
+}
+
+.content {
+  justify-content: space-between;
+  align-items: stretch;
+  padding-top: 30px;
+  display: flex;
+
+  @include media("<=portraitPhone") {
+    display: block;
+  }
+
+  &__data {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    padding: 20px;
+  }
+
+  &__data,
+  .photo {
+    flex-basis: 50%;
+  }
+}
+
+.name,
+.created,
+.description,
+.link {
+  margin-bottom: 15px;
+  font-size: em(18);
+}
+
+.link .data {
+  transition: color 2s cubic-bezier(0.03, 1.65, 0.33, -0.5);
+  word-wrap: break-word;
+  color: $c-black;
+
+  &:hover {
+    color: $c-red;
+  }
+}
+
+.photo {
+  @include media("<=portraitPhone") {
+    @include maxCentered(200);
+  }
+}
+
+.back {
+  align-self: center;
+  @include media("<=portraitPhone") {
+    margin-top: 20px;
+  }
+}
+
+.text {
+  font-weight: bold;
+}
+
+.data {
+  &::before {
+    content: " ";
+  }
+}

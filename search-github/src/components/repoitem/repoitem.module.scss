@@ -1,0 +1,82 @@
+@import "../../styles/include-media";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.item {
+  grid-template-columns: 1fr 4fr 1fr 1fr;
+  background-color: $c-greyLight;
+  border: 2px solid $c-brown;
+  margin-bottom: 10px;
+  align-items: center;
+  padding: 10px;
+  display: grid;
+
+  @include media("<tablet") {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__avatar {
+    padding: 5px;
+    width: 100%;
+    @include media("<tablet") {
+      flex-basis: 20%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__rating {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+    @include media("<portraitPhone") {
+      justify-content: space-between;
+      font-size: em(12);
+    }
+
+    &__text {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__favourites {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    &__wrapper {
+      max-width: fit-content;
+      cursor: pointer;
+    }
+  }
+}
+
+.wrapper {
+  justify-content: space-around;
+  flex-direction: column;
+  word-break: break-all;
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  padding: 5px;
+
+  @include media("<tablet") {
+    justify-content: space-between;
+    width: 40%;
+  }
+
+  @include media("<portraitPhone") {
+    justify-content: space-between;
+    font-size: em(12);
+  }
+}

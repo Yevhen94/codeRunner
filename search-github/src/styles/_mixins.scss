@@ -1,0 +1,44 @@
+@function em($px) {
+  @return $px / $fs-base + em;
+}
+
+@mixin size($px) {
+  width: $px + px;
+  height: $px + px;
+}
+
+@mixin maxCentered($widthPx) {
+  max-width: $widthPx + px;
+  margin: 0 auto;
+}
+
+@mixin fixedModal {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+@mixin fixedElem {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+// FONTS
+@mixin font-face(
+  $fontname,
+  $fontfile,
+  $fontweight: normal,
+  $fontstyle: normal
+) {
+  @font-face {
+    font-family: $fontname;
+    src: url("../assets/fonts/" + $fontfile + ".ttf") format("truetype");
+    font-weight: $fontweight;
+    font-style: $fontstyle;
+  }
+}

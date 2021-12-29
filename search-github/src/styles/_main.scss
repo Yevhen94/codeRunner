@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $f-roboto, sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #81dcf5, #77a7f5);
+    border-radius: 2px;
+  }
+}
+
+.loading {
+  justify-content: center;
+  align-items: center;
+  @include fixedModal;
+  display: flex;
+
+  &__text {
+    border-bottom: 3px solid $c-warning;
+    border-right: 3px solid $c-violet;
+    border-left: 3px solid $c-brown;
+    border-top: 3px solid $c-red;
+    @include size(150);
+  }
+}
+
+.container {
+  @include maxCentered(1920);
+}
+
+.block-size {
+  @include maxCentered(1200);
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.title {
+  text-align: center;
+}
+
+.img {
+  border-radius: 50%;
+  display: block;
+  width: 100%;
+}
+
+.link {
+  background-color: $c-creme;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: $c-black;
+  display: block;
+  padding: 10px;
+
+  &:hover {
+    background-color: $c-brown;
+    color: $c-white;
+  }
+}
+
+.form-error {
+  border: 1px solid $c-red;
+
+  &::placeholder {
+    color: $c-red;
+  }
+
+  & .input::placeholder {
+    color: $c-red;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: em(12);
+    font-weight: bold;
+    min-height: 30px;
+    padding: 5px 0;
+    color: $c-red;
+    width: 100%;
+  }
+}
+
+label {
+  width: 100%;
+}
+
+.icon {
+  stroke: $c-yellow;
+  @include size(30);
+  fill: $c-yellow;
+  display: block;
+
+  &-star {
+    &:hover {
+      stroke: $c-greenLight;
+      transform: scale(1.5);
+      fill: $c-greenLight;
+    }
+    &--checked {
+      stroke: $c-greenLight;
+      transform: scale(1.5);
+      fill: $c-greenLight;
+    }
+  }
+
+  &-like {
+    @include size(40);
+    stroke: inherit;
+    fill: inherit;
+
+    &:hover {
+      stroke: $c-yellow;
+      fill: $c-yellow;
+      transform: none;
+    }
+  }
+
+  &-close {
+    @include size(15);
+    stroke: $c-grey;
+    fill: $c-grey;
+
+    &--item {
+      stroke: $c-red;
+      fill: $c-red;
+    }
+  }
+}

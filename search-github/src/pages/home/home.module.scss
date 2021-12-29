@@ -1,0 +1,76 @@
+@import "../../styles/include-media";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.content {
+  padding: 10px;
+}
+
+.title {
+  padding: 10px;
+}
+
+.loadingWrapper {
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  display: flex;
+  height: 80vh;
+}
+
+.loading {
+  animation: searchLoading 1s linear infinite alternate;
+  border-bottom: 3px solid $c-greenLight;
+  border-right: 3px solid $c-violet;
+  border-left: 3px solid $c-yellow;
+  border-top: 3px solid $c-red;
+  border-radius: 50%;
+  @include size(70);
+}
+
+.pagination {
+  max-width: fit-content;
+  margin-top: 20px;
+  margin: 0 auto;
+  padding: 15px;
+
+  &__item {
+    border: 1px solid $c-default;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &--current {
+      background-color: $c-blue;
+      font-weight: bold;
+      color: $c-white;
+    }
+  }
+}
+
+.sorting {
+  justify-content: flex-end;
+  padding: 20px;
+  display: flex;
+}
+
+.select {
+  padding: 10px 20px;
+  font-size: em(18);
+  appearance: none;
+  width: 200px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@keyframes searchLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
+}
