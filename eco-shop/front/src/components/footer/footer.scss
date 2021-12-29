@@ -1,0 +1,123 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/include-media";
+
+.footer {
+  background: linear-gradient(
+    360deg,
+    rgb(42, 42, 68) 0%,
+    rgb(119, 119, 198) 60%,
+    rgb(199, 179, 236) 100%
+  );
+  padding: 30px 10px 10px 10px;
+
+  &__content {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    display: flex;
+
+    @include media("<=phone") {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__form {
+    margin-left: 40px;
+    flex-basis: 50%;
+    width: 100%;
+  }
+
+  // Contacts block
+  &__contacts {
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    max-width: 180px;
+    display: flex;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__link {
+      margin-bottom: 10px;
+      font-size: em(12);
+      color: $c-white;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      & .link {
+        align-items: flex-start;
+        display: flex;
+
+        &:hover {
+          text-decoration: underline;
+          color: $c-chokolate;
+        }
+      }
+    }
+  }
+
+  &__navigation {
+    flex-direction: column;
+    margin-right: 5px;
+    display: flex;
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__links {
+      justify-content: space-between;
+      flex-direction: column;
+      color: $c-white;
+      display: flex;
+    }
+  }
+
+  &__socials {
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__link {
+      color: $c-white;
+      fill: $c-grey;
+
+      &:hover {
+        text-decoration: underline;
+        color: $c-chokolate;
+        fill: $c-blue;
+      }
+    }
+  }
+
+  &__subscribe {
+    text-align: center;
+
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    @include media("<=tablet") {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__copy {
+    flex-direction: column;
+    align-items: center;
+    font-size: em(12);
+    padding-top: 10px;
+    color: $c-grey;
+    display: flex;
+  }
+}

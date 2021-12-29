@@ -1,0 +1,9 @@
+mixin reg-form(args)
+	- let inputs = [{type: "text", id: "js-first-name", placeholder: "Enter your First name", name: "first-name", content: "First name:", classList: "e-input--login"}, {type: "text", id: "js-last-name", placeholder: "Enter your Last name", name: "last-name", content: "Last name:", classList: "e-input--login"}, {type: "email", id: "js-email", placeholder: "Enter your email", name: "email", content: "Email:", classList: "e-input--login"}, {type: "password", id: "js-password", placeholder: "Enter your password", name: "password", content: "Password:", classList: "e-input--login"}, {type: "password", id: "js-confirm-password", placeholder: "Confirm your password", name: "password-confirm", content: "Confirm password:", classList: "e-input--login"}]
+		form.c-reg-form(action="#" method="POST")
+			each key in inputs 
+				label(for= key.id)
+					span.c-reg-form__text= key.content
+					+input({id: key.id, type: key.type, name: key.name, placeholder: key.placeholder, classList: key.classList})
+			+paragraph({classList: "e-paragraph--error", id: "js-text-error"})
+			+button({id: "js-reg-btn", type: "submit", content: "Registration", classList: "c-button--bgcolor c-button--log", svgClassList: "icon-rotate", svgHref: "#icon-rotate"})

@@ -1,0 +1,12 @@
+mixin footer(args)
+	- let svgLinks = [{href: "https://www.facebook.com", svgClassList: "icon-facebook", svgHref: "#icon-facebook"}, {href: "https://twitter.com", svgClassList: "icon-twitter", svgHref: "#icon-twitter"}, {href: "https://www.linkedin.com", svgClassList: "icon-linkedin", svgHref: "#icon-linkedin"}]
+	footer.c-footer 
+		.c-footer__wrapper.block-content 
+			.c-footer__socials
+				each link in svgLinks
+					+link({href: link.href, svgClassList: link.svgClassList, svgHref: link.svgHref})
+			+underline()
+			.c-footer__copy
+				span.c-footer__copy__text &copy; 2021. All rights reserved
+				span.c-footer__copy__text SevenBrothers Studio production
+

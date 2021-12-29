@@ -1,0 +1,13 @@
+mixin login-form(args)
+	- let inputs = [{type: "email", id: "js-log-email", placeholder: "Enter your email", name: "email", content: "Email:", classList: "e-input--login", svgClassList: "icon-mail", svgHref: "#icon-mail"}, {type: "password", id: "js-log-password", placeholder: "Enter your password", name: "password", content: "Password:", classList: "e-input--login", svgClassList: "icon-lock", svgHref: "#icon-lock"}]
+		form.c-login-form(action="#" method="POST")
+			each key in inputs 
+				label(for= key.id)
+					span.c-login-form__text= key.content
+					.c-login-form__input
+						.c-login-form__input__svg
+							svg.icon(class= key.svgClassList)
+								use(xlink:href= key.svgHref)
+						+input({id: key.id, type: key.type, name: key.name, placeholder: key.placeholder, classList: key.classList})
+			+paragraph({classList: "e-paragraph--error", id: "js-text-log-error"})
+			+button({id: "js-log-btn", type: "submit", content: "LogIn", classList: "c-button--bgcolor c-button--log", svgClassList: "icon-rotate", svgHref: "#icon-rotate"}) 

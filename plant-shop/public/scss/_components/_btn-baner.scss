@@ -1,0 +1,39 @@
+.c-btn-baner {
+  justify-content: space-between;
+  font-family: $f-raleway;
+  flex-direction: column;
+  align-items: baseline;
+  color: $c-darkGreen;
+  cursor: pointer;
+  padding: 20px;
+  display: flex;
+  width: 50%;
+
+  &:hover {
+    background-color: $c-darkGreen;
+    color: $c-white;
+  }
+
+  &__road {
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    display: flex;
+    width: 40%;
+  }
+
+  &__title {
+    font-size: em(20);
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 500px) {
+  .c-btn-baner {
+    justify-content: center;
+
+    &__road {
+      width: 90%;
+    }
+  }
+}

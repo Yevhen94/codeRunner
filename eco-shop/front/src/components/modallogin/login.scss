@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.login {
+  background-color: $c-brownModal;
+  pointer-events: none;
+  @include fixedModal;
+  align-items: center;
+  position: fixed;
+  padding: 10px;
+  display: flex;
+  height: 100vh;
+  opacity: 0;
+
+  &__wrapper {
+    background-color: $c-white;
+    @include maxCentered(500);
+    transform: translate(0, -100%);
+    transition: all 2s, ease;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    width: 100%;
+  }
+
+  &__close {
+    border: 1px solid $c-black;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 50%;
+    @include size(30);
+    cursor: pointer;
+    display: flex;
+    right: 20px;
+    top: 20px;
+  }
+
+  &__link {
+    @include maxCentered(300);
+    margin-top: 20px;
+
+    & .link {
+      text-decoration: underline;
+    }
+  }
+}
+
+.open {
+  pointer-events: all;
+  z-index: 999;
+  opacity: 1;
+  & .login__wrapper {
+    transition: all 0.5s ease;
+    transform: translate(0, 0);
+  }
+}

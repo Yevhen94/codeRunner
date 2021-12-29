@@ -1,0 +1,61 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/include-media";
+
+.button {
+  background-color: $c-warning;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px 5px;
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  display: flex;
+  border: none;
+
+  &--search {
+    background-color: transparent;
+    padding: 5px;
+
+    &:hover {
+      background-color: $c-warning;
+    }
+  }
+
+  &--subscribe {
+    background-color: $c-warning;
+    border-radius: 0 15px 15px 0;
+
+    @include media("<=portraitPhone") {
+      border-radius: 0;
+    }
+  }
+
+  &--login {
+    justify-content: space-between;
+    padding: 10px 5px 10px 25px;
+    border-radius: 0;
+  }
+
+  &--lang {
+    background-color: transparent;
+
+    padding: 10px 5px;
+    font-weight: bold;
+    border-radius: 0;
+
+    &:hover {
+      background-color: inherit;
+      color: $c-warning;
+    }
+  }
+
+  &--display {
+    display: none;
+  }
+
+  &__text {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,76 @@
+.icon {
+  @include size(20);
+  stroke: $c-black;
+  display: block;
+  fill: none;
+}
+
+.c-about .icon {
+  @include size(48);
+  fill: $c-darkGreen;
+  stroke: $c-darkGreen;
+}
+
+.c-footer .icon {
+  margin-right: 20px;
+  @include size(35);
+  stroke: none;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.icon-facebook {
+  fill: $c-blue;
+}
+
+.icon-rotate {
+  margin-left: 10px;
+  stroke: $c-white;
+  fill: $c-white;
+  opacity: 0;
+}
+
+.icon-close {
+  stroke: $c-greyBtnHover;
+  fill: $c-greyBtnHover;
+  @include size(10);
+}
+
+.icon-user {
+  stroke: $c-lightBlue;
+  fill: $c-lightBlue;
+  @include size(40);
+  padding-left: 4px;
+}
+
+.c-login-form .icon {
+  stroke: $c-black;
+  fill: $c-white;
+}
+
+.c-products-list .icon {
+  stroke: $c-darkGreen;
+  fill: $c-darkGreen;
+  @include size(50);
+}
+
+.c-baner__content .icon {
+  stroke: $c-greyBtnHover;
+  fill: $c-greyBtnHover;
+}
+
+.c-header__buttons .icon-close {
+  display: none;
+}
+
+.c-cart .icon-close {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .c-products-list .icon {
+    @include size(20);
+  }
+}

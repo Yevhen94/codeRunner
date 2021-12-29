@@ -1,0 +1,35 @@
+extends ./src/_extends/common
+
+block style
+	link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+	link(rel="stylesheet" href="./styles/main.css")
+	link(rel="stylesheet" href="./styles/index.css")
+	block title
+		title Plants Shop
+block content
+	.container
+		+header()
+		+baner()
+		main.c-main 
+			.c-main__wrapper
+				+about()
+				+products()
+				+relax()
+				+get-shop()
+				+contacts()
+		+footer()
+		+registration()
+		+login()
+block script
+	script(src="https://unpkg.com/swiper@7/swiper-bundle.min.js")
+	script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChTlXfZT7aWGTfmHAf0l6ECRUetcg-9ew&callback=initMap")
+	script(src="./js/maps.js")
+	script(src="./js/burger.js")
+	script(src="./js/subscribe-search.js")
+	script(src="./js/shop.js")
+	script(src="./js/modal.js")
+	script(defer src="./js/cart.js")
+	script(src="./js/index.js")
+
+
+

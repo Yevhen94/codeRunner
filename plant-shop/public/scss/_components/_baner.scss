@@ -1,0 +1,65 @@
+.c-baner {
+  &__wrapper {
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10px;
+    padding-top: 100px;
+    display: flex;
+  }
+
+  &__image {
+    flex-basis: 45%;
+  }
+
+  &__content {
+    justify-content: space-between;
+    flex-direction: column;
+    flex-basis: 50%;
+    display: flex;
+
+    &__buy {
+      justify-content: start;
+      align-items: center;
+      padding: 10px 0;
+      display: flex;
+
+      & .c-text {
+        margin-right: 20px;
+        font-weight: bold;
+      }
+    }
+
+    &__buttons {
+      justify-content: space-between;
+      display: flex;
+    }
+  }
+
+  & .e-paragraph {
+    font-size: em(16);
+  }
+}
+
+@media (max-width: 800px) {
+  .c-baner {
+    &__wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    &__content {
+      padding: 30px;
+      &__buy {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .c-baner {
+    &__content {
+      padding: 15px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.c-products {
+  padding: 10px;
+  &__header {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
+  }
+
+  &__body {
+    padding: 30px;
+  }
+}

@@ -1,0 +1,53 @@
+@import "../../../../styles/include-media";
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.benefits {
+  justify-content: space-between;
+  padding: 30px 20px;
+  // flex-wrap: wrap;
+  display: flex;
+
+  // @include media("<=tablet") {
+  //   grid-template-columns: repeat(2, 1fr);
+  //   grid-gap: 20px;
+  // }
+}
+
+.delivery,
+.support,
+.product,
+.cash {
+  border: 2px solid $c-greyLight;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+  padding: 25px 15px;
+  width: 25%;
+  display: flex;
+}
+
+.cash {
+  margin-right: 0;
+}
+
+.titleBlock {
+  justify-content: center;
+  stroke: $c-greenTitles;
+  color: $c-greenTitles;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: em(24);
+  min-height: 80px;
+  display: flex;
+}
+
+.subtitle {
+  margin-left: 20px;
+}
+
+.content {
+  font-size: em(16);
+}

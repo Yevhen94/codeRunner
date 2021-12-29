@@ -1,0 +1,8 @@
+mixin title(args)
+	- let content   = args.content;
+	- let classList = args.classList;
+	- let dataset   = args.dataset;
+		if (dataset)
+			h2.e-title(class= classList, dataset= dataset)= content 
+		else
+			h3.e-title(class= classList)= content	

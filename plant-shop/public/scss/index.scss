@@ -1,0 +1,47 @@
+// Config
+@import "./variables";
+// Mixins
+@import "./mixins";
+// Fonts
+@import "./fonts";
+// Main styles
+@import "./_components/_index";
+@import "./_elements/_index";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  @include maxCentered(1920);
+  font-family: $f-roboto;
+}
+
+.block-content {
+  @include maxCentered(1440);
+}
+
+.open {
+  background-color: $c-brownModal;
+  @include fixedGlobal;
+  height: 100vh;
+}
+
+.js-modal {
+  background-color: $c-white;
+  @include maxCentered(600);
+  position: relative;
+  width: 100%;
+}
+
+.js-green {
+  color: $c-lightGreen;
+}
+
+@media (max-width: 400px) {
+  .js-modal {
+    padding-top: 40px;
+  }
+}

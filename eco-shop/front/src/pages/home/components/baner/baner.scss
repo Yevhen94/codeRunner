@@ -1,0 +1,68 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/include-media";
+@import "../../../../styles//mixins";
+
+.slide {
+  position: relative;
+  max-height: 100vh;
+  max-width: inherit;
+
+  &__content {
+    background-color: $c-sliderBanerBG;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    display: flex;
+    padding: 5px;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    &__wrapper {
+      background-color: $c-whiteTransparent;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 30px;
+      max-width: 400px;
+      display: flex;
+      padding: 20px;
+
+      @include media("<=portraitPhone") {
+        max-width: 250px;
+        border-radius: 0;
+        padding: 5px;
+      }
+    }
+
+    &__title {
+      color: rgb(8, 7, 6);
+      text-align: center;
+      font-weight: bold;
+
+      @include media("<=portraitPhone") {
+        font-size: em(16);
+      }
+    }
+
+    &__link {
+      background-color: $c-chokolate;
+      max-width: fit-content;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+      color: $c-black;
+      display: block;
+
+      @include media("<=portraitPhone") {
+        font-weight: normal;
+        font-size: em(12);
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mixin address(args)
+	- let links = [{contentTitle: "CALL US", href: "tel:+380000000000", content: "+380000000000"}, {contentTitle: "SEND EMAIL", href: "mailto:email@gmail.com", content: "email@gmail.com"}, {contentTitle: "GO EVENT", href: "https://goo.gl/maps/jgciyrmuiXD2tzMT6", content: "Ukraine, Poltava city, Kotlyarevskoho str, 2A"}];
+		.c-address
+			.c-address__wrapper 
+				each key in links
+					.c-address__item
+						.c-address__item__inner
+							.c-address__item__front
+								span.c-address__item__text= key.contentTitle
+							.c-address__item__back
+								+link({href: key.href, content: key.content})

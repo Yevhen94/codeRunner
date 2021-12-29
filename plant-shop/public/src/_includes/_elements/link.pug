@@ -1,0 +1,12 @@
+mixin link(args)
+	- let href         = args.href || "#";
+	- let content      = args.content;
+	- let classList    = args.classList;
+	- let svgHref      = args.svgHref;
+	- let svgClassList = args.svgClassList;
+		if (svgHref)
+			a.e-link(href= href, class= classList)
+				svg.icon(class= svgClassList)
+					use(xlink:href= svgHref)
+		else 
+			a.e-link(href= href, class= classList)= content

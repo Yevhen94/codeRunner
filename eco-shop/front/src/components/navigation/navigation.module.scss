@@ -1,0 +1,141 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+@import "../../styles/include-media";
+
+.wrapper {
+  @include media("<=tablet") {
+    background-color: $c-brownModal;
+    position: fixed;
+    z-index: 199;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+}
+
+.navigation {
+  align-self: stretch;
+  font-weight: bold;
+  color: $c-black;
+
+  @include media("<=tablet") {
+    transition: transform 800ms cubic-bezier(0.8, 0, 0.33, 1);
+    transform: translateX(-100%);
+    justify-content: flex-start;
+    min-width: 200px;
+    position: fixed;
+    opacity: 0;
+    left: 0;
+    top: 0;
+  }
+}
+
+.navigationList {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  height: 100%;
+
+  @include media("<=tablet") {
+    justify-content: flex-start;
+    flex-direction: column;
+    height: fit-content;
+  }
+}
+
+.navigationItem {
+  align-items: center;
+  padding: 30px 15px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+
+  @include media("<=tablet") {
+    height: fit-content;
+    padding-left: 50px;
+    width: 100%;
+  }
+
+  @include media(">tablet") {
+    &:hover .navigationContent {
+      display: block;
+    }
+  }
+
+  &:hover {
+    background-color: $c-black;
+    color: $c-white;
+  }
+}
+
+.navigationContent {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  width: 150%;
+  top: 100%;
+  left: 0;
+
+  @include media("<=tablet") {
+    transition: all 800ms cubic-bezier(0.07, 0.99, 1, 0.96);
+    transform: translateX(-100%);
+    position: fixed;
+    display: block;
+    width: 100%;
+    opacity: 0;
+    left: 0;
+    top: 0;
+  }
+
+  &--active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.navigationButtons {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  display: flex;
+}
+
+.navigationButtonsLang {
+  justify-content: center;
+  margin-bottom: 100px;
+  align-items: center;
+  display: flex;
+}
+
+.arrow {
+  transform: rotate(90deg);
+  justify-content: center;
+  align-items: center;
+  padding-right: 4px;
+  font-size: em(12);
+  display: flex;
+
+  @include media("<=tablet") {
+    transform: rotate(0);
+    padding-bottom: 2px;
+    padding-right: 0;
+  }
+}
+
+.navigation.navActive {
+  background: $c-creme;
+  justify-content: space-between;
+  border-radius: 0 0 50px 0;
+  transform: translateX(0);
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  z-index: 200;
+  opacity: 1;
+  left: 0;
+  top: 0;
+}

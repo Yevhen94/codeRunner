@@ -1,0 +1,7 @@
+mixin cart(args)
+	.c-cart 
+		.js-modal.c-cart__wrapper(id="js-cart-content")
+			.c-cart__close 
+				+button({classList: "c-button--close", id: "js-cart-close", type: "button", svgClassList: "icon-close", svgHref: "#icon-close"})
+			.c-cart__content__result 
+				+button({id: "js-go", type: "submit", classList: "c-button--bgcolor", content: "ISSUE"})

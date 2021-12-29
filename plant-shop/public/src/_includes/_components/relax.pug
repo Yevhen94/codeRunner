@@ -1,0 +1,12 @@
+mixin relax(args)
+	.c-relax 
+		.c-relax__wrapper.block-content 
+			.c-relax__content 
+				.c-relax__content__title
+					+title({classList: "e-title--color", dataset: "second-title", content: "Buy more plants, it helps you to be relaxed"})
+				.c-relax__content__text 
+					+paragraph({content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida gravida aliquam. Pellentesque et lobortis nisl. Sed et mauris justo. Nulla eu enim non mauris maximus dignissim. Maecenas vitae eros sapien. Quisque pellentesque tempus dignissim."})
+				.c-relax__content__img
+					+image({src: "./assets/images/relax-first.jpg", alt: "mirror"})
+			.c-relax__image 
+				+image({src: "./assets/images/relax-second.jpg", alt: "flowers"})

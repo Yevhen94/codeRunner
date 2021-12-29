@@ -1,0 +1,48 @@
+.c-relax {
+  &__wrapper {
+    justify-content: space-between;
+    padding: 60px 5px 40px 5px;
+    align-items: center;
+    display: flex;
+  }
+
+  &__content {
+    flex-basis: 770px;
+    flex-shrink: 2;
+
+    &__title,
+    &__text {
+      max-width: 520px;
+      padding-left: 20px;
+    }
+
+    &__text {
+      margin-bottom: 25px;
+      margin-top: 20px;
+    }
+  }
+
+  &__image {
+    margin-left: 20px;
+    flex-basis: 600px;
+  }
+}
+
+@media (max-width: 900px) {
+  .c-relax {
+    &__wrapper {
+      text-align: center;
+      display: block;
+    }
+    &__content {
+      &__title,
+      &__text {
+        max-width: 100%;
+        padding-left: 0;
+      }
+    }
+    &__image {
+      display: none;
+    }
+  }
+}

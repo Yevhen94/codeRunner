@@ -1,0 +1,24 @@
+mixin header(args)
+	header.c-header
+		.c-header__wrapper.block-content
+			.c-header__logo 
+				+logo()
+			.c-header__buttons
+				.c-header__resize
+					.c-header__resize__search
+						+search()
+					.c-header__shop-cart
+						+shop-cart()
+				.c-header__lang 
+					+button({id: "js-eng", type: "button", value: "en", content: "EN", classList: "c-button--lang"})
+					span.c-header__lang__slash /
+					+button({id: "js-rus", type: "button", value: "ru", content: "RU", classList: "c-button--lang"})
+				.c-header__registr
+					+button({id: "js-btn-registration", type: "button", content: "Sign Up", classList: "c-button--color"})
+				.c-header__login
+					+button({id: "js-btn-login", type: "button", content: "Sign In", classList: "c-button--bgcolor"})
+				svg.icon.icon-close(id="js-burger-close")
+					use(xlink:href= "#icon-close")
+			.c-header__user 
+				+button({id: "js-btn-menu", type: "button", classList: "c-button--menu", svgClassList: "icon-user", svgHref: "#icon-user"})
+

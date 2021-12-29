@@ -1,0 +1,25 @@
+.c-search {
+  &__wrapper {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+}
+
+.c-search__wrapper--active {
+  border: 1px solid $c-black;
+  border-radius: 15px;
+  padding: 2px;
+}
+
+@media (max-width: 500px) {
+  .c-search {
+    &__wrapper--active {
+      background-color: $c-yellow;
+      position: fixed;
+      top: 15px;
+      left: 80px;
+      right: 10px;
+    }
+  }
+}

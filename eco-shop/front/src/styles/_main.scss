@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: $f-roboto, sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #81dcf5, #77a7f5);
+    border-radius: 2px;
+  }
+}
+
+.container {
+  @include maxCentered(1920);
+}
+
+.block-size {
+  @include maxCentered(1200);
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+
+  &--footer {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    align-items: center;
+    font-size: em(12);
+    display: flex;
+
+    & span {
+      padding-top: 3px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: $c-chokolate;
+    }
+  }
+}
+
+.img {
+  display: block;
+  width: 100%;
+}
+
+.title {
+  color: $c-blackLight;
+  font-size: em(32);
+  font-weight: bold;
+  cursor: default;
+
+  &--footer {
+    color: $c-blackLight;
+    font-size: em(18);
+    font-weight: bold;
+  }
+
+  &--home-resize {
+    @include media("<phone") {
+      font-size: em(20);
+    }
+  }
+}
+
+.underline {
+  background-color: $c-lightFooter;
+  border: none;
+  height: 2px;
+
+  &--footer {
+    position: relative;
+  }
+}
+
+.menu-visible {
+  @include media("<=tablet") {
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+.menu-hidden {
+  transition: pointer-events 1.5s cubic-bezier(0.8, 0, 0.33, 1);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.form-error {
+  border: 1px solid $c-red;
+
+  &::placeholder {
+    color: $c-red;
+  }
+
+  & .input::placeholder {
+    color: $c-red;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: em(12);
+    font-weight: bold;
+    min-height: 30px;
+    padding: 5px 0;
+    color: $c-red;
+    width: 100%;
+  }
+}
+
+label {
+  width: 100%;
+}
+
+.change-type-input,
+.input-icon {
+  @include size(24);
+  color: $c-default;
+  font-size: 20px;
+}
+.change-type-input {
+  cursor: pointer;
+
+  &:hover {
+    color: $c-blackLight;
+  }
+}

@@ -1,0 +1,90 @@
+@import "../../styles/variables";
+@import "../../styles/include-media";
+@import "../../styles/mixins";
+
+.dropdownBack {
+  padding: 20px 15px 20px 50px;
+  text-align: left;
+  color: $c-black;
+  display: none;
+
+  @include media("<=tablet") {
+    display: block;
+  }
+
+  &:hover {
+    background-color: $c-black;
+    color: $c-white;
+  }
+}
+
+.dropdownItem {
+  justify-content: flex-start;
+  background-color: $c-grey;
+  align-items: center;
+  position: relative;
+  text-align: left;
+  color: $c-black;
+  padding: 10px;
+  display: flex;
+
+  @include media("<=tablet") {
+    padding: 30px 15px 30px 50px;
+    background-color: inherit;
+    font-weight: bold;
+  }
+
+  &:hover .dropdown-content {
+    display: block;
+  }
+
+  &:hover {
+    background-color: $c-black;
+    color: $c-white;
+  }
+
+  @include media(">tablet") {
+    &:hover .dropdownLine {
+      background-color: $c-white;
+      margin-right: 10px;
+      width: 10px;
+      height: 1px;
+    }
+  }
+}
+
+.dropdownLine {
+  transition: width 0.3s linear;
+  width: 0;
+}
+
+.dropdown-content {
+  position: absolute;
+  display: none;
+  z-index: 100;
+  width: 100%;
+  left: 100%;
+  top: -100%;
+
+  @include media("<=tablet") {
+    transition: all 800ms cubic-bezier(0.07, 0.99, 1, 0.96);
+    transform: translateX(-100%);
+    position: fixed;
+    display: block;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+}
+
+.arrow {
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
+  font-size: em(12);
+  display: flex;
+}

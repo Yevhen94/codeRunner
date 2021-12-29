@@ -1,0 +1,70 @@
+.c-button {
+  padding: 10px 30px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: em(14);
+  background: none;
+  max-width: 210px;
+  cursor: pointer;
+  color: $c-white;
+  outline: none;
+  border: none;
+
+  &__text {
+    white-space: nowrap;
+  }
+
+  &--bgcolor {
+    background-color: $c-darkGreen;
+  }
+
+  &--color {
+    color: $c-darkGreen;
+  }
+
+  &--width {
+    padding: 10px 20px;
+    border-radius: 15px;
+
+    &:hover {
+      background-color: $c-greyBtnHover;
+    }
+  }
+
+  &--subscribe {
+    border-radius: 20px;
+    font-size: em(18);
+  }
+
+  &--log {
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 5px;
+    display: flex;
+  }
+
+  &--lang {
+    font-size: em(18);
+    padding: 10px 5px;
+    color: $c-black;
+  }
+
+  &--menu {
+    padding: 0;
+
+    &:hover {
+      background-color: $c-darkGreen;
+
+      border-radius: 50%;
+
+      & .icon-user {
+        fill: $c-white;
+        stroke: $c-white;
+      }
+    }
+  }
+
+  &--close {
+    padding: 8px;
+  }
+}

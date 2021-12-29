@@ -1,0 +1,20 @@
+.c-registration {
+  display: none;
+
+  &__wrapper {
+    border-radius: 15px;
+    padding: 20px;
+  }
+  &__close {
+    border: 1px solid $c-greyBtnHover;
+    max-width: fit-content;
+    position: absolute;
+    border-radius: 50%;
+    right: 15px;
+    top: 15px;
+  }
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}

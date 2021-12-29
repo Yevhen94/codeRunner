@@ -1,0 +1,63 @@
+@import "../../styles/include-media";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.logout {
+  background-color: $c-brownModal;
+  pointer-events: none;
+  @include fixedModal;
+  height: 100vh;
+  opacity: 0;
+}
+
+.wrapper {
+  justify-content: space-between;
+  transform: translate(0, -100%);
+  background-color: $c-white;
+  transition: all 2s, ease;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  max-width: 400px;
+  display: flex;
+  padding: 30px;
+}
+
+.logoutClose {
+  border: 1px solid $c-black;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 50%;
+  @include size(30);
+  cursor: pointer;
+  display: flex;
+  right: 20px;
+  top: 20px;
+}
+
+.paragraph {
+  padding: 30px 30px 0 30px;
+  text-align: center;
+}
+
+.icon {
+  color: $c-brown;
+  margin: 15px 0;
+}
+
+.buttons-block {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  display: grid;
+}
+
+.open {
+  pointer-events: all;
+  z-index: 999;
+  opacity: 1;
+  & .wrapper {
+    transition: all 0.5s ease;
+    transform: translate(0, 0);
+  }
+}

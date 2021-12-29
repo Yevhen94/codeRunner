@@ -1,0 +1,70 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/include-media";
+@import "../../../../styles/mixins";
+
+.wrapper {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+
+  @include media("<tablet") {
+    align-items: flex-start;
+  }
+
+  @include media("<portraitPhone") {
+    display: block;
+  }
+}
+
+.about {
+  @include maxCentered(900);
+  padding: 10px 5px;
+  padding-top: 50px;
+
+  @include media("<phone") {
+    padding-top: 20px;
+  }
+
+  &__img {
+    border: 2px solid $c-greyLight;
+    max-width: 50%;
+    padding: 10px;
+
+    @include media("<portraitPhone") {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__content {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    font-size: em(18);
+    padding: 0 30px;
+    max-width: 50%;
+    display: flex;
+
+    @include media("<portraitPhone") {
+      margin-top: 25px;
+      max-width: 100%;
+    }
+  }
+
+  &__link {
+    background-color: $c-warning;
+    max-width: fit-content;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    color: $c-white;
+    display: block;
+  }
+}

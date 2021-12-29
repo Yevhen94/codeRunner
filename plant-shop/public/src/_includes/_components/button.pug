@@ -1,0 +1,22 @@
+mixin button(args)
+	- let id           = args.id;
+	- let type         = args.type;
+	- let content      = args.content;
+	- let classList    = args.classList;
+	- let svgHref      = args.svgHref;
+	- let svgClassList = args.svgClassList;
+	- let value        = args.value;
+
+
+		if(svgHref && content)
+			button.c-button(id= id, type= type, value= value, class= classList)
+				span.c-button__text= content
+				svg.icon(class= svgClassList)
+					use(xlink:href= svgHref)
+		else if(svgHref)
+			button.c-button(id= id, type= type, value= value, class= classList)
+				svg.icon(class= svgClassList)
+					use(xlink:href= svgHref)
+		else 
+			button.c-button(id= id, type= type, value= value, class= classList)
+				span.c-button__text= content

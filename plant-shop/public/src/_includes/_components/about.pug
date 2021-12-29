@@ -1,0 +1,12 @@
+mixin about(args)
+	- let blockInfo = [{titleContent: "Fast Delivery", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard", svgHref: "#icon-fast", svgClassList: "icon-fast"}, {titleContent: "Great Customer Service", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard", svgHref: "#icon-headphones", svgClassList: "icon-headphones"}, {titleContent: "Original Plants", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard", svgHref: "#icon-plant", svgClassList: "icon-plant"}, {titleContent: "Affordable Price", content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard", svgHref: "#icon-dollar", svgClassList: "icon-dollar"}]
+		.c-about.block-content 
+			.c-about__wrapper
+				each block in blockInfo
+					.c-about__block
+						.c-about__block__title 
+							svg.icon(class= block.svgClassList)
+								use(xlink:href= block.svgHref)
+							+title({content: block.titleContent})
+						.c-about__block__content 
+							+paragraph({content: block.content})

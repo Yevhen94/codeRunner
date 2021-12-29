@@ -1,0 +1,6 @@
+mixin select(args)
+	- let value = [{value: "select", content: "Select your choice"}, {value: "cheaper", content: "Cheaper First"}, {value: "expensive", content: "Expensive First"}, {value: "sort-a-z", content: "A - Z"}, {value: "sort-z-a", content: "Z - A"}];
+	select(name="sort").c-select
+		each key in value
+			option(value= key.value)= key.content 
+

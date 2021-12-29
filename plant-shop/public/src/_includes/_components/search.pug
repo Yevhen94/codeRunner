@@ -1,0 +1,6 @@
+mixin search(args)
+	.c-search 
+		.c-search__wrapper
+			+input({id: "js-input-search", type: "search", name: "text", placeholder: "Enter your text here", classList: "e-input--search"})
+			+button({id: "js-btn-search", type: "submit", classList: "c-button--width", svgClassList: "icon-search", svgHref: "#icon-search"})
+

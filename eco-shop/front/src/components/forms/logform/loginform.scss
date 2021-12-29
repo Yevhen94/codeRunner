@@ -1,0 +1,26 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.login-title {
+  text-align: center;
+}
+
+.login-form {
+  justify-content: space-between;
+  @include maxCentered(600);
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+
+  &__input {
+    justify-content: space-between;
+    border: 1px solid $c-grey;
+    border-radius: 10px;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    width: 70%;
+  }
+}

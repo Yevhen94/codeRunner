@@ -1,0 +1,70 @@
+@import "../../../../styles/include-media";
+@import "../../../../styles/variables";
+@import "../../../../styles/mixins";
+
+.products {
+  padding: 20px 10px;
+
+  &__title {
+    border-bottom: 2px solid $c-grey;
+    @include maxCentered(400);
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+.slide {
+  position: relative;
+  max-height: 400px;
+  max-width: 400px;
+
+  &__title {
+    background-color: $c-whiteTransparent;
+    transform: translate(-50%, -50%);
+    max-width: fit-content;
+    border-radius: 30px;
+    position: absolute;
+    padding: 15px;
+    left: 50%;
+    top: 40%;
+  }
+}
+
+.title {
+  @include media("<=portraitPhone") {
+    font-size: em(16);
+  }
+}
+
+.wrapper {
+  justify-content: flex-end;
+  flex-direction: column;
+  padding-bottom: 30px;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  &:hover {
+    background-color: $c-brownBGLight;
+  }
+
+  &:hover .button {
+    display: block;
+  }
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid $c-white;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  color: $c-white;
+  padding: 10px;
+  display: none;
+}

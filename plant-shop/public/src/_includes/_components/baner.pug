@@ -1,0 +1,11 @@
+mixin baner(args)
+	- let images = [{src: "./assets/images/baner-first.jpg", alt: "nature-first"}, {src: "./assets/images/baner-second.jpg", alt: "nature-second"}, {src: "./assets/images/baner-third.jpg", alt: "nature-third"}]
+	.c-baner(id="js-baner") 
+		.swiper.c-baner-swiper
+			.swiper-wrapper
+				each key in images 
+					.swiper-slide
+						img.e-img(src= key.src alt= key.alt)
+
+
+

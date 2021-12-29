@@ -1,0 +1,60 @@
+@import "../../styles/variables";
+@import "../../styles/include-media";
+
+.aboutMenu {
+  @include media("<=tablet") {
+    transition: all 800ms cubic-bezier(0.07, 0.99, 1, 0.96);
+  }
+}
+
+.aboutMenuBack {
+  padding: 20px 15px 20px 50px;
+  text-align: left;
+  color: $c-black;
+  display: none;
+
+  @include media("<=tablet") {
+    display: block;
+  }
+
+  &:hover {
+    background-color: $c-black;
+    color: $c-white;
+  }
+}
+
+.aboutMenuItem {
+  justify-content: flex-start;
+  background-color: $c-grey;
+  align-items: center;
+  text-align: left;
+  color: $c-black;
+  padding: 10px;
+  display: flex;
+
+  @include media("<=tablet") {
+    background: inherit;
+    padding: 30px 15px;
+    padding-left: 50px;
+    font-weight: bold;
+  }
+
+  &:hover {
+    background-color: $c-black;
+    color: $c-white;
+  }
+
+  @include media(">tablet") {
+    &:hover .aboutMenuLine {
+      background-color: $c-white;
+      margin-right: 10px;
+      width: 10px;
+      height: 1px;
+    }
+  }
+}
+
+.aboutMenuLine {
+  transition: width 0.3s linear;
+  width: 0;
+}

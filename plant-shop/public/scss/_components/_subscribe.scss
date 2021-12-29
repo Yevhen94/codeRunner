@@ -1,0 +1,24 @@
+.c-subscribe {
+  max-width: 500px;
+  margin: 0 auto;
+
+  &__title {
+    @include maxCentered(250);
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  &__input {
+    justify-content: center;
+    border-radius: 20px;
+    display: flex;
+    height: 45px;
+
+    &--active {
+      border: 1px solid $c-black;
+      border-radius: 15px;
+      padding: 2px;
+    }
+  }
+}

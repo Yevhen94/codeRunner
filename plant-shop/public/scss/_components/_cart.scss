@@ -1,0 +1,58 @@
+.c-cart {
+  justify-content: center;
+
+  padding: 0 10px;
+  display: none;
+
+  &__wrapper {
+    justify-content: space-between;
+    background-color: $c-white;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 50px 30px;
+    max-height: 80vh;
+    overflow: auto;
+    display: flex;
+  }
+
+  &__save {
+    justify-content: center;
+    margin-bottom: 20px;
+    display: flex;
+  }
+
+  &__close {
+    border: 1px solid $c-greyBtnHover;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  &__content {
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    display: flex;
+
+    &__title {
+      & .e-title--baner {
+        font-size: em(30);
+      }
+    }
+
+    &__buttons {
+      justify-content: space-around;
+      align-items: center;
+      max-width: 100px;
+      display: flex;
+
+      & .e-text {
+        display: block;
+        margin: 0 10px;
+      }
+    }
+  }
+}

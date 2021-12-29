@@ -1,0 +1,11 @@
+mixin products(args)
+	.c-products.block-content
+		.c-products__wrapper 
+			.c-products__header 
+				.c-products__header__title
+					+title({content: "Featured Plants"})
+				.c-products__header__select
+					+select()
+			+underline()
+			.c-products__body
+				+products-list()

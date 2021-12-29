@@ -1,0 +1,57 @@
+.c-get-shop {
+  margin-top: 30px;
+  &__wrapper {
+    justify-content: space-around;
+    background-color: $c-greyBg;
+    padding: 20px 15px;
+    align-items: center;
+    display: flex;
+  }
+  &__content {
+    flex-basis: 500px;
+
+    &__title {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .c-get-shop {
+    &__wrapper {
+      background-image: url(../assets/images/get-shop-img.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      display: block;
+    }
+
+    &__content {
+      justify-content: flex-end;
+      flex-direction: column;
+      min-height: 350px;
+      display: flex;
+      &__title {
+        background-color: $c-whiteHeaderBg;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__image {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .c-get-shop {
+    &__content {
+      &__title {
+        & .e-title {
+          font-size: em(24);
+        }
+      }
+    }
+  }
+}

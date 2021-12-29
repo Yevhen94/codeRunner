@@ -1,0 +1,107 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.icon {
+  @include size(20);
+  fill: transparent;
+  stroke: $c-black;
+
+  &-delivery,
+  &-support,
+  &-plant,
+  &-cash {
+    @include size(30);
+    stroke: inherit;
+  }
+
+  // &-plant {
+  //   @include size();
+  // }
+  &-facebook,
+  &-twitter,
+  &-linkedin {
+    margin-right: 5px;
+    fill: inherit;
+    stroke: none;
+  }
+
+  &-close {
+    @include size(16);
+
+    &--modal {
+      @include size(30);
+      stroke: $c-green;
+    }
+
+    &--cart {
+      @include size(20);
+      stroke: inherit;
+
+      &-item {
+        @include size(10);
+        stroke: inherit;
+      }
+    }
+  }
+
+  &-rotate {
+    @include size(15);
+    margin-left: 5px;
+    stroke: $c-white;
+    fill: $c-white;
+    border-radius: 50%;
+    opacity: 0;
+
+    &--visible {
+      animation: rotate 1.5s linear infinite;
+      opacity: 1;
+    }
+  }
+
+  &-loading {
+    box-shadow: 0px 0px 12px 1px $c-greenDark;
+    animation: loading 1s linear infinite;
+    border-radius: 50%;
+    @include size(50);
+  }
+
+  &-categories,
+  &-berry,
+  &-coffee,
+  &-fruit,
+  &-grits,
+  &-nut,
+  &-vegetable {
+    margin-right: 20px;
+    stroke: $c-greenDark;
+    pointer-events: none;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  0% {
+    stroke: rgb(170, 225, 170);
+    fill: rgb(170, 225, 170);
+    transform: rotate(0deg);
+  }
+  25% {
+    stroke: rgb(67, 147, 67);
+    fill: rgb(67, 147, 67);
+  }
+  50% {
+    stroke: rgb(18, 119, 18);
+    fill: rgb(18, 119, 18);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

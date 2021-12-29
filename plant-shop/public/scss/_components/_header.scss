@@ -1,0 +1,87 @@
+.c-header {
+  background-color: $c-whiteHeaderBg;
+  padding: 15px 55px;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  top: 0;
+
+  &__wrapper {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  &__resize {
+    justify-content: flex-end;
+    align-items: center;
+    max-height: 40px;
+    display: flex;
+  }
+
+  &__buttons {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  &__lang {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    &__slash {
+      font-size: em(20);
+      padding-bottom: 5px;
+      color: $c-black;
+    }
+  }
+  &__user {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .c-header {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 750px) {
+  .c-header {
+    &__buttons {
+      background-color: $c-yellow;
+      border-radius: 0 0 0 30px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      position: fixed;
+      display: none;
+      padding: 100px 50px;
+      height: 100vh;
+      right: 0;
+      top: 0;
+
+      &--active {
+        display: block;
+      }
+    }
+
+    &__user {
+      display: block;
+    }
+  }
+}
+
+.c-header__buttons.c-header__buttons--active .icon-close {
+  position: absolute;
+  cursor: pointer;
+  display: block;
+  right: 30px;
+  top: 38px;
+}
+
+.c-header--scroll {
+  background-color: $c-greyBtnHover;
+}

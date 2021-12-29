@@ -1,0 +1,9 @@
+mixin registration(args)
+	.c-registration
+		.c-registration__wrapper.js-modal
+			.c-registration__close 
+				+button({id: "js-reg-close", type: "button", classList: "c-button--close", svgClassList: "icon-close", svgHref: "#icon-close"}) 
+			.c-registration__title 
+				+title({classList: "e-title--users", content: "Registration new user"})
+			.c-registration__form
+				+reg-form()

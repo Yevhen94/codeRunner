@@ -1,0 +1,10 @@
+mixin get-shop(args)
+	.c-get-shop 
+		.c-get-shop__wrapper.block-content 
+			.c-get-shop__content 
+				.c-get-shop__content__title 
+					+title({classList: "e-title--color", dataset: "second-title", content: "Get your favourites plant on our shop now"})
+				.c-get-shop__content__btn 
+					+button({id: "js-get-shop", type: "button", classList: "c-button--bgcolor", content: "Visit Shop"})
+			.c-get-shop__image 
+				+image({src: "./assets/images/get-shop-img.png", alt: "plant"})

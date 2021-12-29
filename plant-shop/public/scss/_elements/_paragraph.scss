@@ -1,0 +1,16 @@
+.e-paragraph {
+  line-height: 28px;
+  font-size: em(20);
+
+  &--error {
+    font-family: $f-roboto;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 16px;
+    font-size: em(12);
+    font-weight: bold;
+    color: $c-red;
+    height: 30px;
+    width: 100%;
+  }
+}

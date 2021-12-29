@@ -1,0 +1,10 @@
+mixin subscribe(args)
+	.c-subscribe 
+		.c-subscribe__wrapper
+			.c-subscribe__title 
+				+title({content: "Subscribe Us for know about new products our comapany"})
+			.c-subscribe__input
+				+input({classList: "e-input--search", type: "email", id: "js-subscribe", name: "mail", placeholder: "Enter your email here"})
+				+button({id: "js-subscribe-btn", type: "submit", classList: "c-button--subscribe c-button--bgcolor", content: "Subscribe"})
+			.c-subscribe__error 
+				+paragraph({classList: "e-paragraph--error", id: "js-subscribe-error"})

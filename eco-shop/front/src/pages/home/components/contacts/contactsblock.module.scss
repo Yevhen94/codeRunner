@@ -1,0 +1,95 @@
+@import "../../../../styles/include-media";
+@import "../../../../styles/mixins";
+@import "../../../../styles/variables";
+
+.contacts {
+  padding: 10px 5px;
+}
+
+.title {
+  border-bottom: 2px solid $c-grey;
+  @include maxCentered(400);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.address {
+  justify-content: center;
+  letter-spacing: 1.5px;
+  padding: 40px 15px;
+  display: flex;
+
+  @include media("<portraitPhone") {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+  }
+
+  &__item {
+    background-color: transparent;
+    margin-right: 15px;
+    perspective: 1000;
+    height: 100px;
+    width: 200px;
+
+    @include media("<portraitPhone") {
+      margin-top: 10px;
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &__inner {
+      transform-style: preserve-3d;
+      transition: transform 0.8s;
+      text-align: center;
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    &:hover &__inner {
+      transform: rotateY(180deg);
+    }
+
+    &__front,
+    &__back {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      border-radius: 40px;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+    &__front {
+      background-color: $c-blue;
+      justify-content: center;
+      flex-direction: column;
+      font-weight: bold;
+      font-size: em(20);
+      color: $c-white;
+      display: flex;
+    }
+
+    &__back {
+      background-color: $c-creme;
+      transform: rotateY(180deg);
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 10px;
+      color: $c-black;
+      display: flex;
+    }
+  }
+}
+
+.link {
+  color: $c-black;
+}

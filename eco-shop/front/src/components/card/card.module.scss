@@ -1,0 +1,111 @@
+@import "../../styles/include-media";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.contentItem {
+  -webkit-transition: all 0.5s ease;
+  border: 10px solid $c-greyBorder;
+  -moz-transition: all 0.5s ease;
+  justify-content: space-between;
+  background-color: $c-white;
+  transition: all 0.5s ease;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 200px;
+  max-width: 250px;
+  padding: 10px;
+  display: flex;
+
+  &__button {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    -webkit-box-shadow: 10px 10px 0px $c-blueBorderShadow;
+    -moz-box-shadow: 10px 10px 0px $c-blueBorderShadow;
+    box-shadow: 10px 10px 0px $c-blueBorderShadow;
+    border: 10px solid $c-blueBorderHover;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+}
+
+.itemTitleBlock {
+  margin: 10px 0;
+}
+
+.itemTitle {
+  font-size: em(20);
+}
+
+.itemPrice {
+  align-items: flex-start;
+  flex-direction: column;
+  display: flex;
+
+  &__text {
+    margin-bottom: 5px;
+
+    &:last-child {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.itemCounter {
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  display: flex;
+
+  &__buttons {
+    border: 1px solid $c-greenDark;
+    max-width: fit-content;
+    border-radius: 5px;
+    display: flex;
+  }
+
+  &__sum {
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+
+    &-result {
+      font-weight: bold;
+    }
+  }
+}
+
+.button {
+  background-color: $c-green;
+  justify-content: center;
+  align-items: center;
+  font-size: em(22);
+  font-weight: bold;
+  cursor: pointer;
+  color: $c-white;
+  display: flex;
+  outline: none;
+  border: none;
+  padding: 5px;
+  width: 100%;
+}
+
+.btnCount {
+  background-color: $c-greenDark;
+  font-weight: bold;
+  @include size(25);
+  color: $c-white;
+  outline: none;
+  border: none;
+}
+
+.count {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 25px;
+  width: 40px;
+}

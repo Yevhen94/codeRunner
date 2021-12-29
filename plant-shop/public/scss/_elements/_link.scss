@@ -1,0 +1,12 @@
+.e-link {
+  display: block;
+  color: inherit;
+}
+
+.c-footer__socials .e-link {
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

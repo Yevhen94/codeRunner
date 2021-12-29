@@ -1,0 +1,9 @@
+mixin login(args)
+	.c-login 
+		.c-login__wrapper.js-modal
+			.c-login__close 
+				+button({classList: "c-button--close", id: "js-login-close", type: "button", svgClassList: "icon-close", svgHref: "#icon-close"}) 
+			.c-login__title 
+				+title({classList: "e-title--users", content: "LogIn"})
+			.c-login__form 
+				+login-form()

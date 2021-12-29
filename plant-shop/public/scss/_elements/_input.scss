@@ -1,0 +1,79 @@
+.e-input {
+  border-radius: 0 20px 20px 0;
+  outline: none;
+  padding: 10px;
+  border: none;
+
+  &--search {
+    background-color: inherit;
+    border-radius: 0;
+    flex-basis: 80%;
+    display: none;
+
+    &::placeholder {
+      color: $c-black;
+    }
+  }
+
+  &--login {
+    border: 1px solid $c-black;
+    flex-basis: 90%;
+  }
+
+  &--bgcolor {
+    background-color: transparent;
+    border: 1px solid $c-white;
+    border-radius: 0;
+    cursor: pointer;
+    color: $c-white;
+
+    &:hover {
+      background-color: $c-whiteHeaderBg;
+      color: $c-black;
+      font-weight: bold;
+    }
+  }
+
+  &--error {
+    border: 1px solid $c-red;
+  }
+
+  &--cart {
+    border: 1px solid $c-black;
+    border-radius: 2px;
+    @include size(30);
+    padding: 0;
+  }
+
+  &--active {
+    cursor: pointer;
+    &:hover {
+      background-color: $c-brown;
+      color: $c-white;
+    }
+  }
+}
+
+.c-login-form .e-input--login {
+  border-left: none;
+}
+
+.c-reg-form .e-input--login {
+  border-radius: 20px;
+}
+
+@media (max-width: 470px) {
+  .e-input {
+    &--search {
+      max-width: 60%;
+    }
+  }
+}
+
+@media (max-width: 310px) {
+  .e-input {
+    &--login {
+      flex-basis: 80%;
+    }
+  }
+}

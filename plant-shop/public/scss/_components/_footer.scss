@@ -1,0 +1,31 @@
+.c-footer {
+  background-color: $c-green;
+
+  &__wrapper {
+    padding: 40px 15px 20px 15px;
+  }
+
+  &__socials {
+    justify-content: center;
+    padding: 20px 0;
+    display: flex;
+  }
+
+  &__copy {
+    font-family: $f-raleway;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 15px;
+    display: flex;
+
+    &__text {
+      display: inline-block;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

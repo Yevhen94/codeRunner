@@ -1,0 +1,13 @@
+mixin contacts(args)
+	.c-contacts
+		.c-contacts__wrapper.block-content
+			+underline()
+			.c-contacts__title 
+				+title({dataset: "title", classList: "e-title--color", content: "Contacts"})
+			.c-contacts__content
+				.c-contacts__content__map
+					+map()
+				.c-contacts__content__address
+					+address()
+			+underline()
+			+subscribe()

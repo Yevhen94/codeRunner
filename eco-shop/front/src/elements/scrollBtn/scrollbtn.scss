@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.scroll {
+  background-color: $c-blueTransparent;
+  animation: pulse 3s infinite;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  @include size(50);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  bottom: 20vh;
+  z-index: 100;
+  right: 30px;
+
+  box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+
+  &:hover {
+    background-color: $c-blue;
+    animation: none;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 30px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: $bsh-baseAnimationStart;
+    box-shadow: $bsh-baseAnimationStart;
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 20px rgba(204, 169, 44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}

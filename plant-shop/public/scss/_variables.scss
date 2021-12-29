@@ -1,0 +1,43 @@
+//Colors
+$c-whiteHeaderBg: rgba(255, 255, 255, 0.7);
+$c-greyBtnHover: rgb(114, 112, 112);
+$c-lightBlue: rgb(80, 150, 255);
+$c-yellow: rgb(148, 148, 106);
+$c-blue: rgb(77, 77, 199);
+$c-greyBorder: #e0e0e0;
+$c-darkGreen: #156963;
+$c-greyBg: #f3f4f6;
+$c-white: #ffffff;
+$c-whiteModal: rgba(255, 255, 255, 0.5);
+$c-greyModal: rgba(128, 128, 128, 0.5);
+$c-brownModal: rgba(44, 21, 0, 0.5);
+$c-black: #000000;
+$c-brown: #2c1500;
+$c-green: rgb(98, 196, 98);
+$c-red: red;
+$c-lightGreen: green;
+
+// Font
+$f-marriweather: "marriweather";
+$f-raleway: "raleway";
+$f-roboto: "roboto";
+
+// Font size
+$fs-base: 16;
+$fs-title-about-desktop: 64;
+$fs-title-about-mobile: 32;
+$fs-text-about: 18;
+
+// Line height
+$lh-title-about: 1;
+$lh-text-about: 1.5;
+
+// Transition
+$t-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Box Shadow
+$bs-normal: 3px 4px 7px rgba($c-black, 0.1);
+$bs-media: 4px 4px 4px rgba(0, 0, 0, 0.5);
+$bs-large: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;

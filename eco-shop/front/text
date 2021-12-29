@@ -1,0 +1,79 @@
+router.post("/addphone", (request, response) => {
+  const newPhone = new Phones({ phone: request.body.phone });
+  (token = request.body.token),
+    (tokenJSON = jwt.verify(token, config.secret, { expiresIn: 3600 * 24 })),
+    (login = tokenJSON.login),
+    (password = tokenJSON.password);
+
+  User.getUserByLogin(login, (err, user) => {
+    if (user.password == password) {
+      newPhone.save();
+      response.json({ success: true, msg: "Новий номер телефону додано !!!" });
+    }
+  });
+});
+
+// Add Image to Day
+router.post("/uploadImageDay", (request, response) => {
+  const filename = request.body.info,
+    filecaption = request.body.caption,
+    newImageDay = new ImagesDay({
+      name: filename,
+      caption: filecaption,
+    });
+
+  newImageDay.save();
+
+  response
+    .status(200)
+    .json({ success: true, msg: "Зображення збережено в розділ Двір Вдень !" });
+});
+
+router.post("/auth", (request, response) => {
+  const login = request.body.login,
+    password = request.body.password;
+
+  User.getUserByLogin(login, (err, user) => {
+    if (err) throw err;
+    if (!user)
+      return response.json({
+        success: false,
+        msg: "Такого користувача не існує!",
+      });
+
+    User.comparePass(password, user.password, (err, isMatch) => {
+      if (err) throw err;
+      if (isMatch) {
+        const token = jwt.sign(user.toJSON(), config.secret, {
+          expiresIn: 3600 * 24,
+        });
+
+        response.json({
+          success: true,
+          token: token,
+          user: {
+            id: user._id,
+            name: user.name,
+            login: user.login,
+            email: user.email,
+          },
+        });
+      } else {
+        return response.json({ success: false, msg: "Паролі не сходяться!" });
+      }
+    });
+  });
+});
+
+router.delete("/deletePricesItem/:id", async (request, response) => {
+  Prices.findByIdAndDelete(request.params.id, (err) => {
+    if (err) {
+      response.json({ success: false, msg: "Щось пішло не так !!!" });
+    } else {
+      response.json({
+        success: true,
+        msg: "Видалено !!!",
+      });
+    }
+  });
+});

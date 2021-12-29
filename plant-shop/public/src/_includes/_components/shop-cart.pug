@@ -1,0 +1,5 @@
+mixin shop-cart(args)
+	.c-shop-cart 
+		.c-shop-cart__wrapper 
+			+button({id:"js-shop-cart", type: "button", classList: "c-button--width", svgClassList: "icon-shopping-cart", svgHref: "#icon-shopping-cart"})
+			+cart()
