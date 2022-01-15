@@ -1,0 +1,52 @@
+@import "../../styles/include-media";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.form {
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 40px;
+  display: flex;
+
+  &__input {
+    border: 1px solid $c-borderInput;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 36px;
+    border-radius: 24px;
+    padding: 12px 15px;
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    &__text {
+      color: $c-blackLight;
+      margin-bottom: 8px;
+      font-size: em(12);
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    &__icon {
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      display: flex;
+    }
+  }
+}
+
+.focus {
+  border: 1px solid $c-focusBorder;
+}
+
+.success {
+  border: 1px solid $c-success;
+}
+
+.error {
+  border: 1px solid $c-error;
+}

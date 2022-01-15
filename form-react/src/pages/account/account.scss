@@ -1,0 +1,10 @@
+@import "../../styles/mixins";
+
+.account {
+  @include maxCentered(1440);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  padding: 10px;
+}

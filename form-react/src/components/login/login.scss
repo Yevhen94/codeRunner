@@ -1,0 +1,51 @@
+@import "../../styles/include-media";
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.login {
+  border: 2px solid $c-borderForm;
+  border-radius: 16px;
+  padding: 48px 40px;
+  min-width: 400px;
+
+  @include media("<portraitPhone") {
+    max-width: 400px;
+    min-width: auto;
+  }
+
+  @include media("<phone") {
+    padding: 20px 10px;
+  }
+
+  &__subtitle {
+    margin-bottom: 4px;
+    font-size: em(16);
+    font-weight: 500;
+    color: $c-grey;
+  }
+
+  &__title {
+    color: $c-blackLight;
+    font-size: em(24);
+    font-weight: bold;
+  }
+
+  &__router {
+    justify-content: flex-start;
+    align-items: center;
+    font-size: em(12);
+    margin-top: 16px;
+    font-weight: 500;
+    display: flex;
+
+    &__question {
+      margin-right: 8px;
+      color: $c-grey;
+    }
+
+    &__link {
+      color: $c-blackLight;
+      cursor: pointer;
+    }
+  }
+}

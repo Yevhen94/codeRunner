@@ -1,0 +1,8 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.icon {
+  @include size(14);
+  display: block;
+  fill: $c-grey;
+}
